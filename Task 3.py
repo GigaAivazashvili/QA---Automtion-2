@@ -13,7 +13,7 @@ class some(unittest.TestCase):
 
     def test_check_box(self):
         self.driver.find_element(By.LINK_TEXT, "File Download").click()
-        self.driver.find_element(By.LINK_TEXT, "test.txt").click()
+        self.driver.find_element(By.LINK_TEXT, "Test.txt").click()
 
     def tearDown(self) -> None:
         self.driver.close()
