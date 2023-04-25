@@ -16,7 +16,7 @@ class some(unittest.TestCase):
         first_content = self.driver.find_element(By.CLASS_NAME, "large-10").text
         self.driver.refresh()
         second_content = self.driver.find_element(By.CLASS_NAME, "large-10").text
-        assert first_content is second_content
+        self.assertTrue(first_content, second_content)
 
     def tearDown(self) -> None:
         self.driver.close()

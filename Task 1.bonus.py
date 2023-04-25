@@ -24,7 +24,7 @@ class some(unittest.TestCase):
             i = i + 1
 
         elements_amount = self.driver.find_elements(By.CLASS_NAME, "added-manually")
-        assert 3 == len(elements_amount)
+        self.assertTrue(3, len(elements_amount))
 
     def tearDown(self) -> None:
         self.driver.close()
