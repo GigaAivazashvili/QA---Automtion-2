@@ -1,5 +1,5 @@
 
-class MainLocators(object):
+class MainLocators():
 
     link_text = "File Upload"
     file_upload = "file-upload"

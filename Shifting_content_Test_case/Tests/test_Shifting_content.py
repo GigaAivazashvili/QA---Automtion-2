@@ -1,23 +1,25 @@
-import allure
 from Shifting_content_Test_case.Steps.Shifting_content_steps import MainSteps
 import unittest
+import allure
 
-class Shiftingcontent(unittest.TestCase):
 
-    @allure.description("Checking Test case for uploading 'pythonProject' file on site")
+class TestShiftingContents(unittest.TestCase):
+
+    @allure.description("Checking on site how changes when mouse hover on button Home than going back and chacking how image changing location")
     @allure.severity(allure.severity_level.NORMAL)
-    @allure.title("Upload 'pythonProject' file")
-    @allure.suite("File Upload Test case")
-    @allure.feature("Upload")
-    @allure.step
-    def Test_Home_Button(self):
+    @allure.title("testing some interesting things")
+    @allure.suite("testing item")
+    @allure.feature("check")
+
+
+    def test_Home_Buttons(self):
         MainSteps.setUp(self)
-        MainSteps.go_to_shiftingcontent(self)
-        MainSteps.go_to_exampleone(self)
+        MainSteps.go_to_shifting_content(self)
+        MainSteps.go_to_example_one(self)
         MainSteps.button_home_hover(self)
         MainSteps.go_back(self)
-    # @allure.step
-    # def Test_pic_location(self):
-        MainSteps.go_to_exampletwo(self)
+    @allure.step
+    def test_pic_location(self):
+        MainSteps.go_to_example_two(self)
         MainSteps.pic_loc_change(self)
         MainSteps.tearDown(self)

@@ -1,19 +1,15 @@
 import unittest
 from selenium.webdriver.common.by import By
-from tests.Locators.file_upload_locators import MainLocators
+from Upload_test.Locators.file_upload_locators import MainLocators
 import allure
 import os
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-
+from os import path
 
 class MainSteps(unittest.TestCase, MainLocators):
-    @allure.description("Checking Test case for uploading 'Steps' file on site")
-    @allure.severity(allure.severity_level.NORMAL)
-    @allure.title("Upload 'Steps' file")
-    @allure.suite("File Upload Test case")
-    @allure.feature("Upload")
+
 
     def __init__(self):
         super().__init__()
@@ -29,9 +25,7 @@ class MainSteps(unittest.TestCase, MainLocators):
         self.driver.find_element(By.LINK_TEXT, MainLocators.link_text).click()
     @allure.step
     def file_upload(self, file_name):
-        print(file_name)
         file_path = os.path.abspath(file_name)
-        print(file_path)
         self.driver.find_element(By.ID, MainLocators.file_upload).send_keys(file_path)
 
     @allure.step
